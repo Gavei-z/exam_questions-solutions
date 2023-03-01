@@ -15,7 +15,7 @@ struct query_parameter {
     const char* name;
     const char* value;
 };
-
+#define MAX_LEN 100
 /**
  * Parse URL query string.
  *

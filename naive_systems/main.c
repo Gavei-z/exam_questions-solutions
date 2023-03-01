@@ -55,6 +55,8 @@ main(void)
 	if (!cJSON_IsObject(json)) {
 		return_error();
 	}
+
+    //! We need set the CLion's `Working directory` to the current project path
 	testcases = cJSON_GetObjectItem(json, "testcases");
 	if (!cJSON_IsArray(testcases)) {
 		return_error();
