@@ -72,7 +72,8 @@ main(void)
 		output = cJSON_GetObjectItem(testcase, "output");
 		url = strdup(input->valuestring);
 		count = parse_query_string(url, &params);
-
+        // `strdup()` returns an identical malloc'd string, so we need free it.
+        free(url);
 		printf("\ncount %d\n", count);
 		if (count != cJSON_GetObjectSize(output)) {
 			return_error();
@@ -90,6 +91,8 @@ main(void)
 			}
 		}
 		printf("OK\n\n");
+        // `params is malloced in the method parse_query_string(), so it should be freed.`
+        free(params);
 	}
 	cJSON_Delete(json);
 	return 0;
