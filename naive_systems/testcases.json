@@ -21,6 +21,24 @@
         "t": "h_",
         "ia": "web"
       }
+    },
+    {
+      "input": "http://example.top/hhh?id=12\\=34&data_type=arti\\&cle&user=john",
+      "output": {
+        "id" :"12=34",
+        "data_type": "arti&cle",
+        "user": "john"
+      }
+    },
+    {
+      "input": "https://example.com/?a=&q=c+\\\\programming?+language&t=h_&ia=\\\\web&b=",
+      "output": {
+        "a": "",
+        "q": "c+\\programming?+language",
+        "t": "h_",
+        "ia": "\\web",
+        "b": ""
+      }
     }
   ]
 }
